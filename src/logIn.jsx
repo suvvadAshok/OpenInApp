@@ -34,21 +34,21 @@ export function Login() {
   const navigate = useNavigate();
 
   return (
-    <div className="h-screen w-screen grid grid-cols-2 max-sm:grid-cols-1">
-      <div className="bg-hero-pattern max-sm:py-0 py-8 bg-[#F8FAFF] max-sm:bg-none bg-cover bg-no-repeat flex flex-col">
-        <div className="px-8 max-sm:flex max-sm:bg-[#605BFF] p-8">
+    <div className="h-screen w-screen grid grid-cols-2 max-sm:grid-cols-1 overflow-y-auto">
+      <div className="bgblue max-sm:py-0 py-8 bg-[#F8FAFF] max-sm:bg-none bg-cover bg-no-repeat flex flex-col">
+        <div className="max-sm:flex max-sm:bg-[#605BFF] p-8 gap-2 items-center">
           <img
             src={logo}
             alt="logo"
             className="h-20 w-20 max-sm:h-6 max-sm:w-6"
           />
-          <h2 className="hidden max-sm:block font-semibold text-xl">BASE</h2>
+          <h2 className="hidden max-sm:block font-semibold text-xl text-[#FAFAFB]">
+            BASE
+          </h2>
         </div>
-        {/* <div className="grow bg-red-300"> */}
         <h1 className="max-sm:hidden text-6xl flex justify-center items-center font-bold text-white grow">
           BASE
         </h1>
-        {/* </div> */}
         <div className="max-sm:hidden flex justify-center items-center gap-10">
           {logoImgData.map((logLink, id) => (
             <a href={logLink.link} key={id}>
@@ -58,9 +58,9 @@ export function Login() {
         </div>
       </div>
 
-      <div className="bg-[#F8FAFF] flex justify-center items-center">
-        <div className="max-w-[422px] w-full flex flex-col gap-6">
-          <div>
+      <div className="bg-[#F8FAFF] flex justify-center items-center max-sm:px-4 py-2 max-sm:py-4">
+        <div className="max-w-[422px] w-full flex flex-col gap-6 max-sm:gap-4">
+          <div className="max-sm:mx-2">
             <h1 className="text-4xl font-bold">Sign In</h1>
             <p>Sign in to your account</p>
           </div>
@@ -117,10 +117,10 @@ export function Login() {
           </p>
         </div>
       </div>
-      <div className="sm:hidden flex justify-center items-center gap-10 bg-red-300">
+      <div className="sm:hidden flex justify-center items-center gap-10 max-sm:gap-4 max-sm:bg-[#F8FAFF] max-sm:py-6">
         {logoImgData.map((logLink, id) => (
           <a href={logLink.link} key={id}>
-            <img src={logLink.img} alt="logo" className="bg-[#858585]" />
+            <img src={logLink.img} alt="logo" className="bg-[#858585] max" />
           </a>
         ))}
       </div>

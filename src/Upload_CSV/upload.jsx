@@ -23,8 +23,9 @@ export function Upload() {
   }
 
   return (
-    <div className="flex flex-col justify-center bg-[#FAFAFB] items-center">
+    <div className="grow flex flex-col justify-center bg-[#FAFAFB] items-center">
       <main className="h-[90vh] grow flex flex-col justify-center items-center">
+        <h1 className="text-2xl font-semibold max-sm:hidden">Upload CSV</h1>
         <div className="w-[596px] h-[360px] bg-white p-4 rounded-xl flex flex-col gap-4">
           <div className="border-dotted border-2 rounded-lg grow flex justify-center items-center flex-col gap-8">
             <img src={excel} alt="excel logo" className="w-8 h-8" />
