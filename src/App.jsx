@@ -8,11 +8,11 @@ function App() {
   return (
     <div className="h-screen w-screen font-sans flex flex-col">
       <Navbar setClose={setClose} close={close} />
-      <div className="grow flex sm:hidden">
+      <div className="grow flex sm:hidden overflow-y-auto">
         <Sidebar close={close} />
         <Upload />
       </div>
-      <div className="grow flex max-sm:hidden">
+      <div className="grow flex max-sm:hidden overflow-y-auto">
         <Sidebar setClose={setClose} close={true} />
         <Upload />
       </div>

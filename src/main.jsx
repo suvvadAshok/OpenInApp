@@ -4,11 +4,13 @@ import App from "./App.jsx";
 import "./index.css";
 import { Login } from "./logIn.jsx";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { loginAuth } from "./loginAuth.jsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Login />,
+    action: loginAuth,
   },
   {
     path: "/upload-csv",

@@ -5,7 +5,8 @@ import linkedIn from "./assets/linkedIn.svg";
 import discord from "./assets/discord.svg";
 import google from "./assets/google.svg";
 import apple from "./assets/apple.svg";
-import { useNavigate } from "react-router-dom";
+import { Form, useActionData, useNavigate } from "react-router-dom";
+import React from "react";
 
 const logoImgData = [
   {
@@ -31,7 +32,17 @@ const logoImgData = [
 ];
 
 export function Login() {
-  const navigate = useNavigate();
+  const actionData = useActionData();
+
+  console.log(actionData);
+
+  const nav = useNavigate();
+
+  React.useEffect(() => {
+    if (actionData) {
+      nav("/upload-csv");
+    }
+  }, [actionData]);
 
   return (
     <div className="h-screen w-screen grid grid-cols-2 max-sm:grid-cols-1 overflow-y-auto">
@@ -80,19 +91,25 @@ export function Login() {
               <p>Sign in with Apple</p>
             </a>
           </div>
-          <div className="bg-white p-8 rounded-xl flex flex-col gap-4">
+          <Form
+            method="post"
+            className="bg-white p-8 rounded-xl flex flex-col gap-4"
+          >
             <div className="flex flex-col gap-2">
               <label htmlFor="mail">Email address</label>
               <input
+                name="email"
                 type="email"
                 id="mail"
                 placeholder="jhondoe@gmail.com"
+                
                 className="bg-[#EAEAEA] p-2 rounded-xl"
               />
             </div>
             <div className="flex flex-col gap-2">
               <label htmlFor="password">Password</label>
               <input
+                name="password"
                 type="password"
                 id="password"
                 placeholder=""
@@ -103,12 +120,12 @@ export function Login() {
               Forgot password?
             </a>
             <button
-              onClick={() => navigate("/upload-csv")}
+              type="submit"
               className="bg-[#346BD4] rounded-lg w-full text-white py-2"
             >
               Sign In
             </button>
-          </div>
+          </Form>
           <p className="text-center">
             Don&apos;t have an account?
             <span className="text-[#346BD4] pl-1 max-sm:block">
