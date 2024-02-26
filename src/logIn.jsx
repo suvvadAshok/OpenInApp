@@ -46,7 +46,7 @@ export function Login() {
 
   return (
     <div className="h-screen w-screen grid grid-cols-2 max-sm:grid-cols-1 overflow-y-auto">
-      <div className=" max-sm:py-0 py-8 bg-[#F8FAFF] max-sm:bg-none bgblue bg-opacity-100 bg-cover bg-no-repeat flex flex-col">
+      <div className=" max-sm:py-0 py-8 bg-[#F8FAFF] max-sm:bg-none bg-hero-pattern bg-opacity-100 bg-cover bg-no-repeat flex flex-col">
         <div className="max-sm:flex max-sm:bg-[#605BFF] p-8 gap-2 items-center">
           <img
             src={logo}
@@ -102,7 +102,6 @@ export function Login() {
                 type="email"
                 id="mail"
                 placeholder="jhondoe@gmail.com"
-                
                 className="bg-[#EAEAEA] p-2 rounded-xl"
               />
             </div>
